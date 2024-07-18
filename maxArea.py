@@ -1,4 +1,4 @@
-height = [2, 2, 2]
+heights = [2, 2, 2]
 
 """
 brute force
@@ -12,5 +12,18 @@ for i, n in enumerate(height):
 print(ma)
 """
 
+def maxArea(heights):
+    l, r = 0, len(heights) - 1
+    res = 0
 
+    while l < r:
+        res = max(min(heights[l], heights[r]) * (r - l), res)
+        if heights[l] < heights[r]:
+            l += 1
+        else:
+            r -= 1
+
+    return res
+
+print(maxArea(heights))
 
