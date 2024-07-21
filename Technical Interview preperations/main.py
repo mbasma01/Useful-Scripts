@@ -27,10 +27,19 @@ graph
 2, -3, 0
 """
 
-s = ""
-for i in range(4):
-    s = "t".join(s)  # Reassign the result back to s
-    print(s)
+nums = [-1,0,2,4,6,8]
+target = 4
+def binarySearch(nums, target):
+    l, r = 0, len(nums) - 1
 
+    while l <= r:
+        m = (l + r)//2
+        print(l, r, m)
+        if nums[m] > target:
+            r = m - 1
+        elif nums[m] < target:
+            l = m + 1
+        else:
+            return m
 
-print(s)
+print(binarySearch(nums, target))
