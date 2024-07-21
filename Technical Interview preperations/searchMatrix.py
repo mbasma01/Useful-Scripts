@@ -35,9 +35,9 @@ optimized approach
 """
 
 def search(matrix, target):
-    m = len(matrix)
-    n = len(matrix[0])
-    l, r = 0, n - 1
+    m = len(matrix)  # rows
+    n = len(matrix[0])  # columns
+    l, r = 0, m - 1
 
     # binary search to find the row that possibly has the target
     while l <= r :
